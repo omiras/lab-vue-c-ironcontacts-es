@@ -13,7 +13,34 @@
 
 <body>
   <div id="app">
+    <h1>Pimec Celebrities Contacts</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Popularity</th>
+          <th>Won Oscar</th>
+          <th>Won Emmy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Usa adecuadamente v-for para crear tantas filas como elementos hay en array. Mapea adecuadamente cada uno de los campos en la celda correspondiente
+        
+          Primera corrección: v-for inicial 11:55
+          Segunda corrección: 12:08
+        -->
+        <tr v-for="contact in allContacts">
+          <td><img style="width:100px" :src="contact.pictureUrl" :alt="contact.name"></td>
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.popularity.toFixed(2) }}</td>
+          <!-- Corregir 12.30: NO face falta computed proprties. Acordaos de modificar la cabecera de la tabla -->
+          <td>{{ contact.wonOscar? '🏆':'' }}</td>
+          <td><span v-show="contact.wonEmmy ">🏆</span></td>
 
+        </tr>
+      </tbody>
+    </table>
   </div>
   <script type="module" src="app.js"></script>
 </body>
