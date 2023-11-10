@@ -478,6 +478,20 @@ createApp({
       },
     ]);
 
-    return { allContacts };
+    // variable para controlar lo que pone el usuario en el filtro de nombre y apellidos
+    const fullName = ref("");
+
+    // vamosa crear una computed property que va a mostrar todos los contactos que cumplan todos los filtros de búsqueda
+    const filteredContacts = computed(() => {
+      console.log("Valor del filtro: ", fullName.value);
+
+      // Corregir 13:00. Aplicad correctamente el método filter sobre allContact.value para quedarme con todos los contactos cuyo nombre contiene lo que ha escritio el usuario en el input (fullName.value)
+
+      return allContacts.value.filter((c) =>
+        c.name.toLowerCase().includes(fullName.value.toLowerCase())
+      );
+    });
+
+    return { allContacts, fullName, filteredContacts };
   },
 }).mount("#app");

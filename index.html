@@ -14,6 +14,11 @@
 <body>
   <div id="app">
     <h1>Pimec Celebrities Contacts</h1>
+    <section>
+      <h2>Filtros</h2>
+      <label for="full-name">Nombre y apellido:</label>
+      <input v-model="fullName" type="text" name="full-name" id="full-name">
+    </section>
     <table>
       <thead>
         <tr>
@@ -30,7 +35,7 @@
           Primera corrección: v-for inicial 11:55
           Segunda corrección: 12:08
         -->
-        <tr v-for="contact in allContacts">
+        <tr v-for="contact in filteredContacts">
           <td><img style="width:100px" :src="contact.pictureUrl" :alt="contact.name"></td>
           <td>{{ contact.name }}</td>
           <td>{{ contact.popularity.toFixed(2) }}</td>

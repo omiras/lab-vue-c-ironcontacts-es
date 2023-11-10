@@ -45,7 +45,7 @@ Crea controles de formulario para filtrar por los siguientes criterios:
 
 1. Poder filtrar por nombre y apellidos
 2. Poder filtrar por un mínimo de popularidad
-3. Poder filtrar por aquellos famosos que han ganado un Emmy y/o un grammy
+3. Poder filtrar por aquellos famosos que han ganado un Emmy y/o un Óscar
 
 Tienes que pensar que tipo de control de formulario vamos a usar para cada campo. ¿Un select? ¿Un input? ¿checkboxes?
 
